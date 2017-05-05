@@ -17,9 +17,11 @@
         <td><%= book.intro %></td>
         <td><%= book.author %></td>
         <td><%= book.price %></td>
-        <td><%= link_to "查閱",book%></td>
+        <td><%= link_to "查閱",book %></td>
+        <td><%= link_to "編輯",edit_book_path(book) %></td>
       </tr>
     <% end %>
   </tbody>
   
 </table>
+<%= link_to "新增書籍",new_book_path %>

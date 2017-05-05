@@ -6,6 +6,11 @@ class BooksController < ApplicationController
   def show
     find_book
   end
+  
+  def edit
+    find_book
+  end
+  
   def new
     @book=Book.new
   end
@@ -15,7 +20,16 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to books_path, notice: "新增成功!"      
     else
-      redirect_to 'new'
+      redirect 'new'
+    end
+  end
+  
+  def update
+    find_book    
+    if @book.update(clean_data)
+      redirect_to books_path, notice: "更新成功!"
+    else
+      redirect 'edit'
     end
   end
   
