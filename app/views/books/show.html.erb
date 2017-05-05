@@ -1,5 +1,6 @@
+<h1>查閱書籍</h1>
 書名:<td><%=@book.name %></td><br />
 簡介:<td><%=@book.intro %></td><br />
 作者:<td><%=@book.author %></td><br />
-價錢:<td><%=@book.price %></td><br />
+價錢:<td><%=ntd(@book) %></td><br />
 <%=link_to "返回" ,books_path %>
