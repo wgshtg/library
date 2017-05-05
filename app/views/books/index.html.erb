@@ -1,1 +1,23 @@
 <%= notice %>
+<h1>書本列表</h1>
+<table>
+  <thead>
+    <tr>
+      <td>書名</td>
+      <td>簡介</td>
+      <td>作者</td>
+      <td>價錢</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.name %></td>
+        <td><%= book.intro %></td>
+        <td><%= book.author %></td>
+        <td><%= book.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
