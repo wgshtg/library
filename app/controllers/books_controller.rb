@@ -3,6 +3,9 @@ class BooksController < ApplicationController
     @books=Book.all
   end
   
+  def show
+    find_book
+  end
   def new
     @book=Book.new
   end
@@ -19,5 +22,12 @@ class BooksController < ApplicationController
   private
     def clean_data
       params.require("book").permit(:name, :intro, :author, :price)
+    end
+  end
+  
+  def find_book
+    @book=Book.find_by(id: params[:id])
+    if @book.nil?
+      redirect_to books_path
     end
   end
