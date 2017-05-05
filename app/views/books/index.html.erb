@@ -16,9 +16,10 @@
         <td><%= book.name %></td>
         <td><%= book.intro %></td>
         <td><%= book.author %></td>
-        <td><%= book.price %></td>
+        <td><%= ntd(book) %></td>
         <td><%= link_to "查閱",book %></td>
         <td><%= link_to "編輯",edit_book_path(book) %></td>
+        <td><%= link_to "刪除",book ,method: "delete", data: { confirm: '確定要刪除?' } %></td>
       </tr>
     <% end %>
   </tbody>
